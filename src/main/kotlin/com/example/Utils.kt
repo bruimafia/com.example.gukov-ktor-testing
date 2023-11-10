@@ -55,6 +55,7 @@ object Utils {
     private fun isSendToday(currentTime: Long, requiredTime: Long) =
         currentTime <= requiredTime
 
+    // Вариант 1 создания планировщика
     fun startWithCoroutineTimer(hours: Int, minutes: Int) =
         CoroutineScope(Dispatchers.IO).launch {
             val c = Calendar.getInstance()
@@ -80,6 +81,7 @@ object Utils {
             }
         }
 
+    // Вариант 2 создания планировщика
     fun startWithTimer(hours: Int, minutes: Int) {
         val c = Calendar.getInstance()
         val currentHour = c.get(Calendar.HOUR_OF_DAY)
@@ -104,6 +106,7 @@ object Utils {
         }, requiredDelay, 24.hours.inWholeMilliseconds)
     }
 
+    // Вариант 3 создания планировщика (но как мне потом уточнили - лучше не использовать сторонние библиотеки)
     fun startWithJob(hours: Int, minutes: Int, name: String) {
         val scheduler: Scheduler
         val schedulerFactory: SchedulerFactory = StdSchedulerFactory()
@@ -130,6 +133,7 @@ object Utils {
         scheduler.scheduleJob(job, trigger)
     }
 
+    // Вариант 1 отправки письма (более стандартным способом)
     fun sendOfJavaMail() {
         val properties = Properties()
         properties["mail.smtp.host"] = EMAIL_HOST
@@ -150,6 +154,7 @@ object Utils {
         transport.sendMessage(message, message.allRecipients)
     }
 
+    // Вариант 2 отправки письма (тоже сделал сначала так, но тут опять таки используется библиотека, что, видимо, не есть хорошо)
     suspend fun sendOfKotlinMailer() {
         val email = emailBuilder {
             from(EMAIL_FROM)

@@ -36,8 +36,14 @@ fun Route.task3Routes() {
 
 fun runTask3(hours: Int, minutes: Int) {
     println("Запущена задача 3 с ежедневной отправкой письма в ${Utils.setZero(hours)}:${Utils.setZero(minutes)}")
+
+    // Вариант 1 создания планировщика
     Utils.sendMailCoroutineJob?.cancel()
     Utils.sendMailCoroutineJob = Utils.startWithCoroutineTimer(hours = hours, minutes = minutes)
+
+    // Вариант 2 создания планировщика
 //    Utils.startWithTimer(hours = hours, minutes = minutes)
+
+    // Вариант 3 создания планировщика (сначала сделал так, но как мне потом уточнили - лучше не использовать сторонние библиотеки)
 //    Utils.startWithJob(hours = hours, minutes = minutes, name = "task3")
 }
