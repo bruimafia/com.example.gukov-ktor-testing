@@ -12,6 +12,7 @@ import kotlinx.html.a
 import kotlinx.html.body
 import kotlinx.html.p
 
+// res
 fun Application.configureRouting() {
     routing {
         get("/") {
