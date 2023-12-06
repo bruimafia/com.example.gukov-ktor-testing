@@ -12,9 +12,11 @@ import kotlinx.html.a
 import kotlinx.html.body
 import kotlinx.html.p
 
+// mastr
 fun Application.configureRouting() {
     routing {
         get("/") {
+            // mas
             call.respondHtml(HttpStatusCode.OK) {
                 body {
                     p {
