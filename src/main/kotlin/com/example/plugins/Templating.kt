@@ -11,6 +11,7 @@ fun Application.configureTemplating() {
             call.respondHtml {
                 body {
                     h1 { +"HTML" }
+                    // zip
                     ul {
                         for (n in 1..10) {
                             li { +"$n" }
