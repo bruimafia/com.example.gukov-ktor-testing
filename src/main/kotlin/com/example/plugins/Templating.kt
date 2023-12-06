@@ -13,6 +13,8 @@ fun Application.configureTemplating() {
                     //zip top
                     h1 { +"HTML" }
                     //zip
+                    h1 { +"HTML" }
+                    // center master
                     ul {
                         for (n in 1..10) {
                             li { +"$n" }
