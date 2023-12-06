@@ -10,8 +10,9 @@ fun Application.configureTemplating() {
         get("/html-dsl") {
             call.respondHtml {
                 body {
+                    //master top
                     h1 { +"HTML" }
-                    // zip
+                    //master
                     ul {
                         for (n in 1..10) {
                             li { +"$n" }
