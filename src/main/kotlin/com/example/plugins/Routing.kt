@@ -12,6 +12,7 @@ import kotlinx.html.a
 import kotlinx.html.body
 import kotlinx.html.p
 
+// MASTER TEST TEST TEST
 // mastr
 fun Application.configureRouting() {
     routing {
@@ -19,6 +20,7 @@ fun Application.configureRouting() {
             // mas
             call.respondHtml(HttpStatusCode.OK) {
                 body {
+                    // gdhhfdj
                     p {
                         +"Для запуска задачи 1 перейдите на "
                         a {
